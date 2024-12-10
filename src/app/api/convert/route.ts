@@ -7,27 +7,27 @@ interface RequestBody {
   quality?: number;
 }
 
-const supportedFormats = [
-  "heic",
-  "heif",
-  "avif",
-  "jpeg",
-  "jpg",
-  "jpe",
-  "tile",
-  "dz",
-  "png",
-  "raw",
-  "tiff",
-  "tif",
-  "webp",
-  "gif",
-  "jp2",
-  "jpx",
-  "j2k",
-  "j2c",
-  "jxl",
-];
+// const supportedFormats = [
+//   "heic",
+//   "heif",
+//   "avif",
+//   "jpeg",
+//   "jpg",
+//   "jpe",
+//   "tile",
+//   "dz",
+//   "png",
+//   "raw",
+//   "tiff",
+//   "tif",
+//   "webp",
+//   "gif",
+//   "jp2",
+//   "jpx",
+//   "j2k",
+//   "j2c",
+//   "jxl",
+// ];
 
 function formatFileSize(bytes: number): string {
   if (bytes < 1024) return `${bytes} bytes`;
