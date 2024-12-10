@@ -145,41 +145,74 @@ export default function ImgPoolLanding() {
       <motion.header
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 container mx-auto px-6 pt-24 pb-16 text-center" // Added more padding
+        transition={{ duration: 0.5 }} // Reduced from 0.8
+        className="relative z-10 container mx-auto px-6 pt-24 pb-16 text-center"
       >
         <motion.div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-radial-gradient from-blue-500/20 to-transparent blur-3xl" />
 
         <motion.h1
-          className="text-6xl md:text-8xl font-extrabold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600" // Enhanced gradient
+          className="text-6xl md:text-8xl font-extrabold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }} // Reduced from 0.6
         >
           ImgPool
         </motion.h1>
         <p className="text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
           Transform your images instantly with our powerful Image tools.
-          <span className="block mt-2 text-gray-400">
-            No sign-up required. 100% free.
-          </span>
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="block mt-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500 font-semibold"
+          >
+            <span className="inline-block animate-pulse">✨</span> No sign-up
+            required. 100% free.
+          </motion.span>
         </p>
 
         <motion.div className="flex justify-center space-x-4">
           <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-blue-700 transition-colors"
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              document.getElementById("features")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+            className="group bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-blue-700 transition-all duration-300 flex items-center"
           >
-            Get Started Free
+            Get Started
+            <motion.span
+              animate={{ y: [0, 5, 0] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="ml-2"
+            >
+              ↓
+            </motion.span>
           </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="bg-glass text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-white/20 transition-colors"
-          >
-            Watch Demo
-          </motion.button>
+
+          <Link href="/docs">
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+                backgroundColor: "rgba(255, 255, 255, 0.15)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-glass text-white px-8 py-3 rounded-full text-lg font-bold transition-all duration-300 flex items-center"
+            >
+              API Docs
+              <span className="ml-2">→</span>
+            </motion.button>
+          </Link>
         </motion.div>
 
         {/* Creator Attribution */}
@@ -221,6 +254,7 @@ export default function ImgPoolLanding() {
 
       {/* Features Grid */}
       <motion.section
+        id="features"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
