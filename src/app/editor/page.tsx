@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ImageIcon, Sliders, Type, Edit3 } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { toast } from "sonner";
 import ImageUploader from "@/components/Editor/ImageUploader";
 import ImageEditor from "@/components/Editor/ImageEditor";
 
