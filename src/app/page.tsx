@@ -10,7 +10,6 @@ import {
   LightbulbIcon,
   DatabaseIcon,
   PaletteIcon,
-  UploadIcon,
   FileSignature,
   Layers,
   Type,
@@ -40,6 +39,14 @@ export default function ImgPoolLanding() {
       link: "/convert",
     },
     {
+      icon: Layers,
+      title: "Advanced Editor",
+      description:
+        "Professional-grade image editing tools with layers, masks, and advanced adjustments.",
+      color: "text-blue-400",
+      link: "/editor",
+    },
+    {
       icon: ScaleIcon,
       title: "AI Image Upscale",
       description:
@@ -61,7 +68,7 @@ export default function ImgPoolLanding() {
       description:
         "Transform text prompts to images or extract prompts from existing images.",
       color: "text-red-400",
-      link: "/generate",
+      link: "https://craftura.art",
     },
     {
       icon: CropIcon,
@@ -78,14 +85,6 @@ export default function ImgPoolLanding() {
         "Advanced color enhancement and correction with intuitive controls.",
       color: "text-pink-400",
       link: "/color",
-    },
-    {
-      icon: UploadIcon,
-      title: "Smart Compression",
-      description:
-        "Reduce file size with granular quality control and preview.",
-      color: "text-teal-400",
-      link: "/compress",
     },
     {
       icon: FilterIcon,
